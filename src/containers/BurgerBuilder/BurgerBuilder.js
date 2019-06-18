@@ -92,11 +92,12 @@ class BurgerBuilder extends Component {
         for (let key in disabledInfo) {
             disabledInfo[key] = disabledInfo[key] <= 0;
         };
-        console.log(this.state.purchase)
+        // console.log(this.state.purchase)
         return (
             <Fragment>
                 <Modal show={this.state.purchase} modalClose={this.purchaseCancelHandler}>
                     <OrderSummary
+                        update={this.state.purchase}
                         price={this.state.totalPrice.toFixed(2)}
                         ingredients={this.state.ingredients}
                         cancel={this.purchaseCancelHandler}
